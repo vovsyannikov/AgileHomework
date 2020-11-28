@@ -21,6 +21,36 @@ class AgileHomeworkTests: XCTestCase {
     func testExample() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Login checks
+        let logins: [(login: String, result: Bool)] = [
+            ("timmyNoScopes@yahoo.com", true),
+            ("adaw", false),
+            ("a@.ru", false),
+            ("@google.su", false),
+            ("I'm not an email", false),
+            ("this.email.is.incorrect@ya.r", false),
+            ("true.email@rambler.com", true)
+        ]
+        
+        for (login, res) in logins {
+            let actualResult = Authentication.loginIsCorrect(for: login)
+            XCTAssert(actualResult == res, "\(login) has to be \(res) and actually \(actualResult)")
+        }
+        
+        // Password checks
+        let passwords: [(pass: String, result: [PasswordError]) ] = [
+            ("5yAdgy",      []),
+            ("123asda",     [.noUpperCaseLetter]),
+            ("h90T",        [.tooShort]),
+            ("yhfGt2jayw",  []),
+            ("HDJUTSVG",    [.noNumber, .noLowerCaseLetter])
+        ]
+        
+        for (pass, res) in passwords {
+            XCTAssert(Authentication.passwordIsStrong(for: pass) == res)
+        }
+        
     }
 
     func testPerformanceExample() throws {

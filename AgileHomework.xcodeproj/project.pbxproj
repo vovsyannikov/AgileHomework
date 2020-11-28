@@ -13,6 +13,8 @@
 		3C8AEDAA2571815000C8EE75 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C8AEDA92571815000C8EE75 /* Preview Assets.xcassets */; };
 		3C8AEDB52571815000C8EE75 /* AgileHomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AEDB42571815000C8EE75 /* AgileHomeworkTests.swift */; };
 		3C8AEDC02571815000C8EE75 /* AgileHomeworkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AEDBF2571815000C8EE75 /* AgileHomeworkUITests.swift */; };
+		3C8AEDD1257186BD00C8EE75 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AEDD0257186BD00C8EE75 /* Authentication.swift */; };
+		3C8AEDD2257186BD00C8EE75 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C8AEDD0257186BD00C8EE75 /* Authentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		3C8AEDBB2571815000C8EE75 /* AgileHomeworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AgileHomeworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8AEDBF2571815000C8EE75 /* AgileHomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileHomeworkUITests.swift; sourceTree = "<group>"; };
 		3C8AEDC12571815000C8EE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C8AEDD0257186BD00C8EE75 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,7 @@
 			children = (
 				3C8AEDA22571814C00C8EE75 /* AgileHomeworkApp.swift */,
 				3C8AEDA42571814C00C8EE75 /* ContentView.swift */,
+				3C8AEDD0257186BD00C8EE75 /* Authentication.swift */,
 				3C8AEDA62571815000C8EE75 /* Assets.xcassets */,
 				3C8AEDAB2571815000C8EE75 /* Info.plist */,
 				3C8AEDA82571815000C8EE75 /* Preview Content */,
@@ -261,6 +265,7 @@
 			files = (
 				3C8AEDA52571814C00C8EE75 /* ContentView.swift in Sources */,
 				3C8AEDA32571814C00C8EE75 /* AgileHomeworkApp.swift in Sources */,
+				3C8AEDD1257186BD00C8EE75 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C8AEDB52571815000C8EE75 /* AgileHomeworkTests.swift in Sources */,
+				3C8AEDD2257186BD00C8EE75 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
