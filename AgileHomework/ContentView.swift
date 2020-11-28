@@ -20,7 +20,7 @@ struct ContentView: View {
     
     var disableButton: Bool { (login.isEmpty || password.isEmpty) }
     var buttonOpacity: Double { disableButton ? 0.25 : 1.0 }
-
+    
     func evalutePasswordResult(_ result: [PasswordError]){
         resultText = "Проверьте пароль. Добавьте: "
         for error in result {
@@ -46,8 +46,9 @@ struct ContentView: View {
         if result.isEmpty { passwordIsCorrect = true }
         else { passwordIsCorrect = false }
     }
-
+    
     var body: some View {
+        
         VStack(alignment: .center) {
             
             // MARK: Top labels
@@ -66,12 +67,12 @@ struct ContentView: View {
                 Image(systemName: "person.fill")
                     .frame(width: 30.0, height: 30.0)
                     .foregroundColor(.green)
-                TextField("Почта", text: $login, onEditingChanged: { _ in
-                    print(login.isEmpty, password.isEmpty)
-                })
-                    .padding(5)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
+                TextField("Почта", text: $login)
+                    .modifier(ClearButton(type: "lc", text: $login))
+                .padding(5)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .keyboardType(.emailAddress)
+                
             }
             .padding(.horizontal, 50)
             
@@ -83,8 +84,9 @@ struct ContentView: View {
                 TextField("Пароль", text: $password, onEditingChanged: { _ in
                     print(login.isEmpty, password.isEmpty)
                 })
-                    .padding(5)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                .modifier(ClearButton(type: "pc", text: $password))
+                .padding(5)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
                 
             }
             .padding(.horizontal, 50)
@@ -95,8 +97,8 @@ struct ContentView: View {
                 let passwordCheckResult = Authentication.passwordIsStrong(for: password)
                 
                 if loginCheckPassed && passwordCheckResult.isEmpty {
-                resultColor = .green
-                resultText = "Успешный вход"
+                    resultColor = .green
+                    resultText = "Успешный вход"
                 } else {
                     resultColor = .red
                     if !loginCheckPassed {
@@ -125,6 +127,33 @@ struct ContentView: View {
             .padding(.top, 15)
             .disabled(disableButton)
             .opacity(buttonOpacity)
+        }
+    }
+}
+
+struct ClearButton: ViewModifier{
+    var type: String
+    @Binding var text: String
+    
+    public func body(content: Content) -> some View
+    {
+        ZStack(alignment: .trailing)
+        {
+            content
+            
+            if !text.isEmpty
+            {
+                Button(action: { self.text = ""} )
+                {
+                    Text(type)
+                        .font(.footnote)
+                        .fontWeight(.ultraLight)
+                        .foregroundColor(.white)
+                    Image(systemName: "x.circle.fill")
+                        .foregroundColor(Color(UIColor.opaqueSeparator))
+                }
+                .padding(.trailing, 8)
+            }
         }
     }
 }
