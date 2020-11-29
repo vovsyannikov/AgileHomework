@@ -48,6 +48,7 @@
 		3C8AEDBF2571815000C8EE75 /* AgileHomeworkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgileHomeworkUITests.swift; sourceTree = "<group>"; };
 		3C8AEDC12571815000C8EE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C8AEDD0257186BD00C8EE75 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		3C8AEDDD2572B09100C8EE75 /* AgileHomework.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AgileHomework.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 		3C8AEDA12571814C00C8EE75 /* AgileHomework */ = {
 			isa = PBXGroup;
 			children = (
+				3C8AEDDD2572B09100C8EE75 /* AgileHomework.entitlements */,
 				3C8AEDA22571814C00C8EE75 /* AgileHomeworkApp.swift */,
 				3C8AEDA42571814C00C8EE75 /* ContentView.swift */,
 				3C8AEDD0257186BD00C8EE75 /* Authentication.swift */,
@@ -423,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AgileHomework/AgileHomework.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AgileHomework/Preview Content\"";
 				DEVELOPMENT_TEAM = Q66LD4VF2K;
@@ -435,6 +438,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SkillBox.AgileHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -445,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AgileHomework/AgileHomework.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AgileHomework/Preview Content\"";
 				DEVELOPMENT_TEAM = Q66LD4VF2K;
@@ -457,6 +462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SkillBox.AgileHomework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -69,9 +69,9 @@ struct ContentView: View {
                     .foregroundColor(.green)
                 TextField("Почта", text: $login)
                     .modifier(ClearButton(type: "lc", text: $login))
-                .padding(5)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .keyboardType(.emailAddress)
+                    .padding(5)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.emailAddress)
                 
             }
             .padding(.horizontal, 50)
@@ -123,14 +123,18 @@ struct ContentView: View {
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(Color.blue, lineWidth: 5)
                     )
+                    .animation(.easeInOut)
             }
             .padding(.top, 15)
             .disabled(disableButton)
             .opacity(buttonOpacity)
         }
+        
     }
+    
 }
 
+// MARK: - ClearButton modifier
 struct ClearButton: ViewModifier{
     var type: String
     @Binding var text: String
@@ -158,6 +162,7 @@ struct ClearButton: ViewModifier{
     }
 }
 
+// MARK: -
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
